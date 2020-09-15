@@ -7,6 +7,15 @@ jobs:
     executor: sam/default
     steps:
       - checkout
+      - run:
+          command: |
+            git clone git://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
+            pyenv update
+            pyenv install 3.7.9
+      - run:
+          command: |
+            pyenv versions
+            pyenv global 3.7.9
       - run: pip install aws-sam-cli==1.1.0
       - run: sam build
       - run: sam deploy
