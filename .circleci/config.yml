@@ -1,4 +1,4 @@
-rbs:
+orbs:
   sam: circleci/aws-sam-serverless@1.0.1
 version: 2.1
 workflows:
