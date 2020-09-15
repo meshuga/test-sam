@@ -9,11 +9,7 @@ jobs:
       - checkout
       - run: pip install aws-sam-cli==1.1.0
       - run: sam build
-      - sam/deploy:
-          name: deploy-production
-          stack-name: production-stack
-          template: ./template.yml
-          s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1at4ufhrnu0h5
+      - run: sam deploy
 
 workflows:
   version: 2
