@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           command: |
-            pip3 install virtualenv
+            pip install virtualenv
             virtualenv -p python3 venv
             source venv/bin/activate
       - run: pip install aws-sam-cli==1.1.0
