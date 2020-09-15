@@ -9,14 +9,9 @@ jobs:
       - checkout
       - run:
           command: |
-            sudo apt install libssl-dev
-            git clone git://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
-            pyenv update
-            pyenv install 3.7.5
-      - run:
-          command: |
-            pyenv versions
-            pyenv global 3.7.5
+            pip3 install virtualenv
+            virtualenv -p python3 venv
+            source venv/bin/activate
       - run: pip install aws-sam-cli==1.1.0
       - run: sam build
       - run: sam deploy
