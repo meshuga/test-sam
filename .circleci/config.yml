@@ -15,7 +15,7 @@ jobs:
       - run:
           command: |
             pyenv versions
-            pyenv global 3.7.9
+            pyenv global 3.7.5
       - run: pip install aws-sam-cli==1.1.0
       - run: sam build
       - run: sam deploy
